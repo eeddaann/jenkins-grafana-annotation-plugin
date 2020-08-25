@@ -8,25 +8,21 @@
 
 ## Introduction
 
-TODO Describe what your plugin does here
+This plugin sends annotations to Grafana in order to improve the observability of Jenkins.
+Combination of this plugin and the CPU/memory of the Jenkins instance may reveal which jobs consumes most of the resources, explain peaks in Jenkins' cpu usage, etc. 
 
 ## Getting started
 
-TODO Tell users how to configure your plugin here, include screenshots, pipeline examples and 
-configuration-as-code examples.
+To configure this plugin, navigate in jenkins to "configure system" and look under "Grafana Annotaions Plugin" section.
+Fill the following fields:
+- **Grafana url** - for example: *http://127.0.0.1:3000*
+- **Grafana Authentication** 
+    - if you plan to authenticate with basic authentication, enter: *user:pass*, for example: *admin:1234*
+    - if you plan to authenticate with API key, just paste the key, for example: *eyJrIjoiT0tTcG1pUlY2RnVKZTFVaDFsNFZXdE9ZWmNrMkZYbk*
 
 ## Issues
 
-TODO Decide where you're going to host your issues, the default is Jenkins JIRA, but you can also enable GitHub issues,
-If you use GitHub issues there's no need for this section; else add the following line:
-
 Report issues and enhancements in the [Jenkins issue tracker](https://issues.jenkins-ci.org/).
-
-## Contributing
-
-TODO review the default [CONTRIBUTING](https://github.com/jenkinsci/.github/blob/master/CONTRIBUTING.md) file and make sure it is appropriate for your plugin, if not then add your own one adapted from the base file
-
-Refer to our [contribution guidelines](https://github.com/jenkinsci/.github/blob/master/CONTRIBUTING.md)
 
 ## LICENSE
 
