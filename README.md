@@ -19,6 +19,7 @@ Fill the following fields:
 - **Grafana Authentication** 
     - if you plan to authenticate with basic authentication, enter: *user:pass*, for example: *admin:1234*
     - if you plan to authenticate with API key, just paste the key, for example: *eyJrIjoiT0tTcG1pUlY2RnVKZTFVaDFsNFZXdE9ZWmNrMkZYbk*
+<img src="images/config.png">
 
 ## Issues
 
