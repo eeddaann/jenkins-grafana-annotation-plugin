@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?jelly escape-by-default='true'?>
 <j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form">
-    <f:section title="${%Sample Plugin}">
-        <f:entry field="label" title="${%Label}">
+    <f:section title="${%Grafana Annotaions Plugin}">
+         <f:entry field="grafanaUrl" title="${%Grafana url}">
+            <f:textbox/>
+        </f:entry>
+        <f:entry field="grafanaAuthentication" title="${%Grafana Authentication}">
             <f:textbox/>
         </f:entry>
     </f:section>

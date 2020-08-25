@@ -24,15 +24,18 @@ public class SampleConfigurationTest {
     @Test
     public void uiAndStorage() {
         rr.then(r -> {
-            assertNull("not set initially", SampleConfiguration.get().getLabel());
+            assertNull("not set initially", SampleConfiguration.get().getGrafanaUrl());
             HtmlForm config = r.createWebClient().goTo("configure").getFormByName("config");
-            HtmlTextInput textbox = config.getInputByName("_.label");
-            textbox.setText("hello");
+            HtmlTextInput urlTextbox = config.getInputByName("_.grafanaUrl");
+            HtmlTextInput authTextbox = config.getInputByName("_.grafanaAuthentication");
+            urlTextbox.setText("http://127.0.0.1:3000");
+            authTextbox.setText("admin:admin");
             r.submit(config);
-            assertEquals("global config page let us edit it", "hello", SampleConfiguration.get().getLabel());
+            assertEquals("global config page let us edit it", "http://127.0.0.1:3000", SampleConfiguration.get().getGrafanaUrl());
         });
         rr.then(r -> {
-            assertEquals("still there after restart of Jenkins", "hello", SampleConfiguration.get().getLabel());
+            assertEquals("still there after restart of Jenkins", "http://127.0.0.1:3000", SampleConfiguration.get().getGrafanaUrl());
+            assertEquals("set correct authentication string", "Basic YWRtaW46YWRtaW4=", SampleConfiguration.get().getGrafanaAuthentication());
         });
     }
 
